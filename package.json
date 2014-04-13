@@ -1,0 +1,23 @@
+{
+  "name": "difi",
+  "version": "0.0.1",
+  "description": "Module for the hotell.difi.no API",
+  "author": "Geir Gåsodden <geir.gasodden@pythonia.no>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/zrrrzzt/difi.git"
+  },
+  "bugs": {
+    "url": "http://github.com/zrrrzzt/difi/issues"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec test/*.js"
+  },
+  "dependencies": {
+    "request": "^2.34.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  }
+}
