@@ -1,6 +1,6 @@
 {
   "name": "difi",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Module for the hotell.difi.no API",
   "author": {
     "name": "Geir Gåsodden",
