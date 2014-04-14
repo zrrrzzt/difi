@@ -8,6 +8,12 @@ Node.js module for querying the [hotell.difi.no API](http://hotell.difi.no/api).
 $ npm install difi
 ```
 
+You can also install it globally to use the CLI version
+
+```
+$ npm install difi -g
+```
+
 ##Test##
 
 Make sure you have installed [Mocha](http://visionmedia.github.io/mocha/) globally or go to the difi folder and do an nmp install.
@@ -41,6 +47,22 @@ difi(opts, function(err, data){
   console.log(data);
 });
 ```
+
+##CLI##
+
+To use it as a CLI app install it globally.
+
+To display help
+
+```
+$ difi --help
+
+Usage:
+
+$ difi --dataset=id-of-dataset --format=format-of-return --query=value-of-query
+
+```
+
 
 ##Todo##
 Better tests
