@@ -1,3 +1,5 @@
+'use strict';
+
 var request = require('request')
   , util = require('util')
   , validFormats = ['csv', 'json', 'jsonp', 'xml', 'yaml']
@@ -30,4 +32,4 @@ module.exports = function(opts, callback){
     return callback(null, body.toString());
   });
 
-}
+};
