@@ -1,3 +1,5 @@
+'use strict';
+
 var difi = require('../index')
   , assert = require('assert')
   , opts = {
