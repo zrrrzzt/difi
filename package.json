@@ -1,7 +1,7 @@
 {
   "name": "difi",
   "version": "0.0.3",
-  "description": "Module for the hotell.difi.no API",
+  "description": "Query the hotell.difi.no API",
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no",

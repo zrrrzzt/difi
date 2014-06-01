@@ -22,7 +22,7 @@ Make sure you have installed [Mocha](http://visionmedia.github.io/mocha/) global
 $ npm test
 ```
 
-##Usage##
+##Usage - Module##
 
 Pass an object with the required properties and receive the result.
 
@@ -48,7 +48,7 @@ difi(opts, function(err, data){
 });
 ```
 
-##CLI##
+##Usage - CLI##
 
 To use it as a CLI app install it globally.
 
@@ -56,13 +56,10 @@ To display help
 
 ```
 $ difi --help
+```
 
 Usage:
-
+```
 $ difi --dataset=id-of-dataset --format=format-of-return --query=value-of-query
 
 ```
-
-
-##Todo##
-Better tests
