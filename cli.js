@@ -19,10 +19,11 @@ function printHelp(){
   console.log('Usage:');
   console.log('');
   console.log(' $ difi <dataset> --query=<query>');
+  console.log('');
   console.log('Optionally pass return format');
   console.log('Available formats: csv, json, jsonp, xml or yaml (default)');
+  console.log('');
   console.log(' $ difi <dataset> --query=<query> --format=<format>');
-
 }
 
 if (!query || process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) {
