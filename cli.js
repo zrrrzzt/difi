@@ -7,7 +7,7 @@ var difi = require('./index')
   , argv = require('minimist')((process.argv.slice(2)))
   , opts = {
       dataset: argv.dataset,
-      format: argv.format,
+      format: argv.format || 'yaml',
       query: {
         query:argv.query
       }
@@ -18,7 +18,11 @@ function printHelp(){
   console.log('');
   console.log('Usage:');
   console.log('');
-  console.log(' $ difi --dataset=id-of-dataset --format=format-of-return --query=value-of-query');
+  console.log(' $ difi <dataset> --query=<query>');
+  console.log('Optionally pass return format');
+  console.log('Available formats: csv, json, jsonp, xml or yaml (default)');
+  console.log(' $ difi <dataset> --query=<query> --format=<format>');
+
 }
 
 if (!query || process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) {
