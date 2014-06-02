@@ -1,6 +1,6 @@
 #difi [![Build Status](https://travis-ci.org/zrrrzzt/difi.svg?branch=master)](https://travis-ci.org/zrrrzzt/difi)
 
-Node.js module for querying the [hotell.difi.no API](http://hotell.difi.no/api).
+Node.js module/CLI app for querying the [hotell.difi.no API](http://hotell.difi.no/api).
 
 ##Installation##
 
