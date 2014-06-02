@@ -2,6 +2,8 @@
 'use strict';
 
 var difi = require('./index')
+  , pkg = require('./package.json')
+  , query = process.argv[2]
   , argv = require('minimist')((process.argv.slice(2)))
   , opts = {
       dataset: argv.dataset,
@@ -12,12 +14,25 @@ var difi = require('./index')
     };
 
 function printHelp(){
+  console.log(pkg.description);
+  console.log('');
   console.log('Usage:');
-  console.log('difi --dataset=id-of-dataset --format=format-of-return --query=value-of-query');
+  console.log('');
+  console.log(' $ difi --dataset=id-of-dataset --format=format-of-return --query=value-of-query');
 }
 
-if (argv.help){
-  return printHelp();
+if (!query || process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) {
+  printHelp();
+  return;
+}
+
+if (process.argv.indexOf('-v') !== -1 || process.argv.indexOf('--version') !== -1) {
+  console.log(pkg.version);
+  return;
+}
+
+if(query.indexOf('--') === -1){
+  opts.dataset = argv._[0];
 }
 
 difi(opts, function(err, data){
