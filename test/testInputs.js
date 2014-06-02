@@ -1,7 +1,8 @@
 'use strict';
 
 var difi = require('../index')
-  , assert = require('assert');
+  , assert = require('assert')
+  ;
 
 describe('Difi - inputs', function(){
 

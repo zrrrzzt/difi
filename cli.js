@@ -11,7 +11,8 @@ var difi = require('./index')
       query: {
         query:argv.query
       }
-    };
+    }
+  ;
 
 function printHelp(){
   console.log(pkg.description);

@@ -7,7 +7,8 @@ var difi = require('../index')
       query: {
         query:'994528130'
       }
-    };
+    }
+  ;
 
 describe('Difi - formats', function(){
 
