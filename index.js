@@ -3,7 +3,8 @@
 var request = require('request')
   , util = require('util')
   , validFormats = ['csv', 'json', 'jsonp', 'xml', 'yaml']
-  , apiUrl = 'http://hotell.difi.no/api';
+  , apiUrl = 'http://hotell.difi.no/api'
+  ;
 
 module.exports = function(opts, callback){
 
