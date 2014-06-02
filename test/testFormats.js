@@ -5,7 +5,7 @@ var difi = require('../index')
   , opts = {
       dataset: 'brreg/enhetsregisteret',
       query: {
-        query:'Pythonia'
+        query:'994528130'
       }
     };
 
