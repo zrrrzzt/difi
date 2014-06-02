@@ -58,8 +58,19 @@ To display help
 $ difi --help
 ```
 
+To display version
+
+```
+$ difi --version
+```
+
 Usage:
 ```
-$ difi --dataset=id-of-dataset --format=format-of-return --query=value-of-query
+$ difi <dataset> --query=<query>
+```
+Optionally set return format.
+Can be csv, json, jsonp, xml or yaml (default)
 
+```
+$ difi <dataset> --query=<query> --format=<format>
 ```
