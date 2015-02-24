@@ -1,10 +1,9 @@
 'use strict';
 
-var request = require('request')
-  , util = require('util')
-  , validFormats = ['csv', 'json', 'jsonp', 'xml', 'yaml']
-  , apiUrl = 'http://hotell.difi.no/api'
-  ;
+var request = require('request');
+var util = require('util');
+var validFormats = ['csv', 'json', 'jsonp', 'xml', 'yaml'];
+var apiUrl = 'http://hotell.difi.no/api';
 
 module.exports = function(opts, callback){
 
