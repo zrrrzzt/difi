@@ -20,10 +20,10 @@ describe('Difi - formats', function(){
     });
   });
 
-  it('Should have a length of 670 if format is json', function(done){
+  it('returns json if format is json', function(done){
     opts.format = 'json';
     difi(opts, function(err, data){
-      assert.equal(data.length, 670);
+      assert.equal(data.entries[0].orgnr, '994528130');
       done();
     });
   });
