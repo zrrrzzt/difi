@@ -33,6 +33,7 @@
     "request": "^2.53.0"
   },
   "devDependencies": {
+    "jscs": "^1.11.3",
     "mocha": "^2.1.0"
   }
 }
