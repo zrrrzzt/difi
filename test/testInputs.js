@@ -74,8 +74,7 @@ describe('Difi - inputs', function(){
     var opts = {dataset:'npmlovesyou', format:'json', query:{query:'doyoulovenpm'}};
     difi(opts, function(err, data){
       if(err) throw err;
-      var res = JSON.parse(data);
-      assert.equal(res.message, 'Dataset or folder not found.');
+      assert.equal(data.message, 'Dataset or folder not found.');
       done();
     });
   });
