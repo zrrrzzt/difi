@@ -1,8 +1,8 @@
-#difi [![Build Status](https://travis-ci.org/zrrrzzt/difi.svg?branch=master)](https://travis-ci.org/zrrrzzt/difi)
+# difi [![Build Status](https://travis-ci.org/zrrrzzt/difi.svg?branch=master)](https://travis-ci.org/zrrrzzt/difi)
 
 Node.js module/CLI app for querying the [hotell.difi.no API](http://hotell.difi.no/api).
 
-##Installation##
+## Installation##
 
 ```
 $ npm install difi
@@ -14,7 +14,7 @@ You can also install it globally to use the CLI version
 $ npm install difi -g
 ```
 
-##Test##
+## Test
 
 Make sure you have installed [Mocha](http://visionmedia.github.io/mocha/) globally or go to the difi folder and do an nmp install.
 
@@ -22,7 +22,7 @@ Make sure you have installed [Mocha](http://visionmedia.github.io/mocha/) global
 $ npm test
 ```
 
-##Usage - Module##
+## Usage - Module
 
 Pass an object with the required properties and receive the result.
 
@@ -48,7 +48,7 @@ difi(opts, function(err, data){
 });
 ```
 
-##Usage - CLI##
+## Usage - CLI
 
 To use it as a CLI app install it globally.
 
