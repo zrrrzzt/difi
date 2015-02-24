@@ -1,18 +1,17 @@
 #!/usr/bin/env node
 'use strict';
 
-var difi = require('./index')
-  , pkg = require('./package.json')
-  , query = process.argv[2]
-  , argv = require('minimist')((process.argv.slice(2)))
-  , opts = {
+var difi = require('./index');
+var pkg = require('./package.json');
+var query = process.argv[2];
+var argv = require('minimist')((process.argv.slice(2)));
+var opts = {
       dataset: argv.dataset,
       format: argv.format || 'yaml',
       query: {
         query:argv.query
       }
-    }
-  ;
+};
 
 function printHelp(){
   console.log(pkg.description);
@@ -42,6 +41,8 @@ if(query.indexOf('--') === -1){
 }
 
 difi(opts, function(err, data){
-  if(err) throw err;
+  if (err) {
+    throw err;
+  }
   console.log(data);
 });
