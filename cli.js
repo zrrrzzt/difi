@@ -13,7 +13,7 @@ var opts = {
       }
 };
 
-function printHelp(){
+function printHelp() {
   console.log(pkg.description);
   console.log('');
   console.log('Usage:');
@@ -36,11 +36,11 @@ if (process.argv.indexOf('-v') !== -1 || process.argv.indexOf('--version') !== -
   return;
 }
 
-if(query.indexOf('--') === -1){
+if (query.indexOf('--') === -1) {
   opts.dataset = argv._[0];
 }
 
-difi(opts, function(err, data){
+difi(opts, function(err, data) {
   if (err) {
     throw err;
   }
