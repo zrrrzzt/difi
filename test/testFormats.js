@@ -1,14 +1,13 @@
 'use strict';
 
-var difi = require('../index')
-  , assert = require('assert')
-  , opts = {
+var difi = require('../index');
+var assert = require('assert');
+var opts = {
       dataset: 'brreg/enhetsregisteret',
       query: {
         query:'994528130'
       }
-    }
-  ;
+};
 
 describe('Difi - formats', function(){
 
