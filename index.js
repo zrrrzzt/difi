@@ -4,6 +4,7 @@ var request = require('request');
 var util = require('util');
 var validFormats = ['csv', 'json', 'jsonp', 'xml', 'yaml'];
 var apiUrl = 'http://hotell.difi.no/api';
+var data = '';
 
 module.exports = function(opts, callback){
 
@@ -29,7 +30,8 @@ module.exports = function(opts, callback){
     if(error) {
       return callback(error, null);
     }
-    return callback(null, body.toString());
+    data = opts.format === 'json' ? JSON.parse(body.toString()) : body.toString();
+    return callback(null, data);
   });
 
 };
