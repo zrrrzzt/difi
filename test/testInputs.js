@@ -1,115 +1,65 @@
-'use strict';
+'use strict'
 
-var difi = require('../index');
-var assert = require('assert');
+var difi = require('../index')
+var tap = require('tap')
 
-describe('Difi - inputs', function() {
+tap.test('Requires dataset to be specified', function (test) {
+  var options = {
+    'format': 'json'
+  }
+  var expectedErrorMessage = 'Missing required param: dataset'
+  difi(options, function (error, data) {
+    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+    test.done()
+  })
+})
 
-  it('Should throw if dataset is not specified', function(done) {
-    var opts = {
-      'format':'json'
-    };
-    difi(opts, function(err, data) {
-      assert.throws(function() {
-        if (err) {
-          throw err;
-        } else {
-          console.log(data);
-        }
-      }, function(err) {
-        if ((err instanceof Error) && /Missing required param: dataset/.test(err)) {
-          return true;
-        }
-      },
-      'Unexpected error'
-      );
-      done();
-    });
-  });
+tap.test('Requires format to be specified', function (test) {
+  var options = {
+    'dataset': 'brreg/enhetsregisteret'
+  }
+  var expectedErrorMessage = 'Missing required param: format'
+  difi(options, function (error, data) {
+    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+    test.done()
+  })
+})
 
-  it('Should throw if format is not specified', function(done) {
-    var opts = {
-      'dataset':'brreg/enhetsregisteret'
-    };
-    difi(opts, function(err, data) {
-      assert.throws(function() {
-          if (err) {
-            throw err;
-          } else {
-            console.log(data);
-          }
-        }, function(err) {
-          if ((err instanceof Error) && /Missing required param: format/.test(err)) {
-            return true;
-          }
-        },
-        'Unexpected error'
-      );
-      done();
-    });
-  });
+tap.test('Requires valid format type', function (test) {
+  var options = {
+    'dataset': 'brreg/enhetsregisteret',
+    'format': 'cucumber'
+  }
+  var expectedErrorMessage = 'Illegal format requested'
+  difi(options, function (error, data) {
+    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+    test.done()
+  })
+})
 
-  it('Should throw if format is wrong type', function(done) {
-    var opts = {
-      'dataset':'brreg/enhetsregisteret',
-      format:'cucumber'
-    };
-    difi(opts, function(err, data) {
-      assert.throws(function() {
-          if (err) {
-            throw err;
-          } else {
-            console.log(data);
-          }
-        }, function(err) {
-          if ((err instanceof Error) && /Illegal format requested/.test(err)) {
-            return true;
-          }
-        },
-        'Unexpected error'
-      );
-      done();
-    });
-  });
+tap.test('Requires query object', function (test) {
+  var options = {
+    'dataset': 'brreg/enhetsregisteret',
+    'format': 'json'
+  }
+  var expectedErrorMessage = 'Missing required param: query'
+  difi(options, function (error, data) {
+    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+    test.done()
+  })
+})
 
-  it('Should throw if query is not specified', function(done) {
-    var opts = {
-      'dataset':'brreg/enhetsregisteret',
-      format:'json'
-    };
-    difi(opts, function(err, data) {
-      assert.throws(function() {
-          if (err) {
-            throw err;
-          } else {
-            console.log(data);
-          }
-        }, function(err) {
-          if ((err instanceof Error) && /Missing required param: query/.test(err)) {
-            return true;
-          }
-        },
-        'Unexpected error'
-      );
-      done();
-    });
-  });
-
-  it('Should return a message if dataset is not found', function(done) {
-    var opts = {
-      dataset:'npmlovesyou',
-      format:'json',
-      query: {
-        query:'doyoulovenpm'
-      }
-    };
-    difi(opts, function(err, data) {
-      if (err) {
-        throw err;
-      }
-      assert.equal(data.message, 'Dataset or folder not found.');
-      done();
-    });
-  });
-
-});
+tap.test('Returns error message if dataset not found', function (test) {
+  var options = {
+    'dataset': 'npmlovesyou',
+    'format': 'json',
+    'query': {
+      query: 'doyoulovenpm'
+    }
+  }
+  var expectedErrorMessage = 'Dataset or folder not found.'
+  difi(options, function (error, data) {
+    tap.equal(data.message, expectedErrorMessage, expectedErrorMessage)
+    test.done()
+  })
+})

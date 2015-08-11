@@ -23,19 +23,17 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "test": "standard && mocha --reporter spec test/*.js"
+    "test": "standard && tap --reporter=spec test/*.js"
   },
   "files": [
     "index.js",
     "cli.js"
   ],
   "dependencies": {
-    "minimist": "^1.1.0",
-    "request": "^2.53.0"
+    "minimist": "^1.1.3"
   },
   "devDependencies": {
-    "jscs": "^1.11.3",
-    "mocha": "^2.1.0",
-    "standard": "^5.0.2"
+    "standard": "^5.0.2",
+    "tap": "^1.3.2"
   }
 }

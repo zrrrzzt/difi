@@ -1,54 +1,65 @@
-'use strict';
+'use strict'
 
-var difi = require('../index');
-var assert = require('assert');
-var opts = {
-      dataset: 'brreg/enhetsregisteret',
-      query: {
-        query:'994528130'
-      }
-};
+var tap = require('tap')
+var difi = require('../index')
+var options = {
+  dataset: 'brreg/enhetsregisteret',
+  query: {
+    query: '994528130'
+  }
+}
 
-describe('Difi - formats', function(){
+tap.test('Should have a length of 626 if format is csv', function (test) {
+  options.format = 'csv'
+  difi(options, function (error, data) {
+    if (error) {
+      throw error
+    }
+    tap.equal(data.length, 626, 'Expected length OK for csv')
+    test.done()
+  })
+})
 
-  it('Should have a length of 626 if format is csv', function(done){
-    opts.format = 'csv';
-    difi(opts, function(err, data){
-      assert.equal(data.length, 626);
-      done();
-    });
-  });
+tap.test('Returns json if format is json', function (test) {
+  options.format = 'json'
+  difi(options, function (error, data) {
+    if (error) {
+      throw error
+    }
+    tap.equal(data.entries[0].orgnr, '994528130', 'Expected data returned from json')
+    test.done()
+  })
+})
 
-  it('returns json if format is json', function(done){
-    opts.format = 'json';
-    difi(opts, function(err, data){
-      assert.equal(data.entries[0].orgnr, '994528130');
-      done();
-    });
-  });
+tap.test('Should have a length of 681 if format is jsonp', function (test) {
+  options.format = 'jsonp'
+  difi(options, function (error, data) {
+    if (error) {
+      throw error
+    }
+    tap.equal(data.length, 681, 'Expected length OK for jsonp')
+    test.done()
+  })
+})
 
-  it('Should have a length of 681 if format is jsonp', function(done){
-    opts.format = 'jsonp';
-    difi(opts, function(err, data){
-      assert.equal(data.length, 681);
-      done();
-    });
-  });
+tap.test('Should have a length of 1494 if format is xml', function (test) {
+  options.format = 'xml'
+  difi(options, function (error, data) {
+    if (error) {
+      throw error
+    }
+    tap.equal(data.length, 1494, 'Expected length OK for xml')
+    test.done()
+  })
+})
 
-  it('Should have a length of 1494 if format is xml', function(done){
-    opts.format = 'xml';
-    difi(opts, function(err, data){
-      assert.equal(data.length, 1494);
-      done();
-    });
-  });
-
-  it('Should have a length of 646 if format is yaml', function(done){
-    opts.format = 'yaml';
-    difi(opts, function(err, data){
-      assert.equal(data.length, 646);
-      done();
-    });
-  });
-
-});
+tap.test('Should have a length of 646 if format is yaml', function (test) {
+  options.format = 'yaml'
+  difi(options, function (error, data) {
+    if (error) {
+      throw error
+    }
+    tap.equal(data.length, 646, 'Expected length OK for yaml')
+    test.done()
+  })
+})
