@@ -2,6 +2,7 @@
   "name": "difi",
   "version": "1.0.0",
   "description": "Query the hotell.difi.no API",
+  "license": "MIT",
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no",
@@ -22,7 +23,7 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "test": "mocha --reporter spec test/*.js"
+    "test": "standard && mocha --reporter spec test/*.js"
   },
   "files": [
     "index.js",
@@ -34,6 +35,7 @@
   },
   "devDependencies": {
     "jscs": "^1.11.3",
-    "mocha": "^2.1.0"
+    "mocha": "^2.1.0",
+    "standard": "^5.0.2"
   }
 }

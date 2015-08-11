@@ -1,8 +1,10 @@
-# difi [![Build Status](https://travis-ci.org/zrrrzzt/difi.svg?branch=master)](https://travis-ci.org/zrrrzzt/difi)
+[![Build Status](https://travis-ci.org/zrrrzzt/difi.svg?branch=master)](https://travis-ci.org/zrrrzzt/difi)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+# difi
 
 Node.js module/CLI app for querying the [hotell.difi.no API](http://hotell.difi.no/api).
 
-## Installation##
+## Installation
 
 ```
 $ npm install difi
