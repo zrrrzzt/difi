@@ -28,21 +28,21 @@ Pass an object with the required properties and receive the result.
 **query** Object with properties for querystring. Find all options in the [API description](http://hotell.difi.no/api)
 
 ```javascript
-var difi = require('difi');
+var difi = require('difi')
 var options = {
       dataset:'brreg/enhetsregisteret',
       format: 'json',
       query: {
         query:'Pythonia'
       }
-};
+}
 
-difi(options, function(err, data){
+difi(options, function (err, data) {
   if (err) {
-    throw err;
+    throw err
   }
-  console.log(data);
-});
+  console.log(data)
+})
 ```
 
 ## Usage - CLI
