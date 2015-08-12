@@ -59,7 +59,24 @@ tap.test('Returns error message if dataset not found', function (test) {
   }
   var expectedErrorMessage = 'Dataset or folder not found.'
   difi(options, function (error, data) {
-    tap.equal(data.message, expectedErrorMessage, expectedErrorMessage)
+    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+    test.done()
+  })
+})
+
+tap.test('Returns json if format is json', function (test) {
+  var options = {
+    dataset: 'brreg/enhetsregisteret',
+    format: 'json',
+    query: {
+      query: '994528130'
+    }
+  }
+  difi(options, function (error, data) {
+    if (error) {
+      throw error
+    }
+    tap.equal(data.entries[0].orgnr, '994528130', 'Expected data returned from json')
     test.done()
   })
 })
