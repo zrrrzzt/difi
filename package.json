@@ -23,7 +23,9 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "test": "standard && tap --reporter=spec test/*.js"
+    "test": "standard && tap --reporter=spec test/*.js",
+    "coverage": "tap test/*.js --coverage",
+    "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls"
   },
   "files": [
     "index.js",
@@ -33,6 +35,7 @@
     "minimist": "^1.1.3"
   },
   "devDependencies": {
+    "coveralls": "^2.11.3",
     "standard": "^5.0.2",
     "tap": "^1.3.2"
   }
