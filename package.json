@@ -1,6 +1,6 @@
 {
   "name": "difi",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Query the hotell.difi.no API",
   "license": "MIT",
   "author": {
@@ -16,19 +16,13 @@
   "bugs": {
     "url": "http://github.com/zrrrzzt/difi/issues"
   },
-  "bin": {
-    "difi": "cli.js"
-  },
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">=0.10.0"
   },
   "scripts": {
     "test": "standard && tap --reporter=spec test/*.js",
     "coverage": "tap test/*.js --coverage",
     "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls"
-  },
-  "dependencies": {
-    "minimist": "^1.1.3"
   },
   "devDependencies": {
     "coveralls": "^2.11.3",

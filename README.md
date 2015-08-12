@@ -3,21 +3,15 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 # difi
 
-Node.js module/CLI app for querying the [hotell.difi.no API](http://hotell.difi.no/api).
+Node.js module for querying the [hotell.difi.no API](http://hotell.difi.no/api).
 
 ## Installation
 
 ```sh
-$ npm install difi
+$ npm install difi --save
 ```
 
-You can also install it globally to use the CLI version
-
-```sh
-$ npm install difi -g
-```
-
-## Usage - Module
+## Usage
 
 Pass an object with the required properties and receive the result.
 
@@ -45,29 +39,6 @@ difi(options, function (err, data) {
 })
 ```
 
-## Usage - CLI
+## Related
 
-To use it as a CLI app install it globally.
-
-To display help
-
-```
-$ difi --help
-```
-
-To display version
-
-```sh
-$ difi --version
-```
-
-Usage:
-```sh
-$ difi <dataset> --query=<query>
-```
-Optionally set return format.
-Can be csv, json, jsonp, xml or yaml (default)
-
-```sh
-$ difi <dataset> --query=<query> --format=<format>
-```
+- [difi-cli](https://github.com/zrrrzzt/difi-cli) CLI for this module
