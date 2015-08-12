@@ -1,10 +1,10 @@
 'use strict'
 
-var request = require('request')
 var util = require('util')
+var getResults = require('./lib/getResults')
 var validFormats = ['csv', 'json', 'jsonp', 'xml', 'yaml']
 var apiUrl = 'http://hotell.difi.no/api'
-var data = ''
+var results = ''
 
 module.exports = function (opts, callback) {
 
@@ -26,12 +26,12 @@ module.exports = function (opts, callback) {
 
   var uri = util.format('%s/%s/%s', apiUrl, opts.format, opts.dataset)
 
-  request(uri, {qs: opts.query}, function (error, response, body) {
+  getResults({apiUrl: uri, qs: opts.query}, function (error, data) {
     if (error) {
       return callback(error, null)
     }
-    data = opts.format === 'json' ? JSON.parse(body.toString()) : body.toString()
-    return callback(null, data)
+    results = opts.format === 'json' ? JSON.parse(data.toString()) : data.toString()
+    return callback(null, results)
   })
 
 }
