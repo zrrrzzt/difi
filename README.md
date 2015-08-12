@@ -17,14 +17,6 @@ You can also install it globally to use the CLI version
 $ npm install difi -g
 ```
 
-## Test
-
-Make sure you have installed [Mocha](http://visionmedia.github.io/mocha/) globally or go to the difi folder and do an nmp install.
-
-```
-$ npm test
-```
-
 ## Usage - Module
 
 Pass an object with the required properties and receive the result.
