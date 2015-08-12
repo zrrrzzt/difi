@@ -7,13 +7,13 @@ Node.js module/CLI app for querying the [hotell.difi.no API](http://hotell.difi.
 
 ## Installation
 
-```
+```sh
 $ npm install difi
 ```
 
 You can also install it globally to use the CLI version
 
-```
+```sh
 $ npm install difi -g
 ```
 
@@ -57,17 +57,17 @@ $ difi --help
 
 To display version
 
-```
+```sh
 $ difi --version
 ```
 
 Usage:
-```
+```sh
 $ difi <dataset> --query=<query>
 ```
 Optionally set return format.
 Can be csv, json, jsonp, xml or yaml (default)
 
-```
+```sh
 $ difi <dataset> --query=<query> --format=<format>
 ```

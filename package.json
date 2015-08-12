@@ -1,6 +1,6 @@
 {
   "name": "difi",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Query the hotell.difi.no API",
   "license": "MIT",
   "author": {
@@ -27,10 +27,6 @@
     "coverage": "tap test/*.js --coverage",
     "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls"
   },
-  "files": [
-    "index.js",
-    "cli.js"
-  ],
   "dependencies": {
     "minimist": "^1.1.3"
   },
