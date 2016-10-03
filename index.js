@@ -1,9 +1,8 @@
 'use strict'
 
-var util = require('util')
-var getResults = require('./lib/getResults')
-var validFormats = ['csv', 'json', 'jsonp', 'xml', 'yaml']
-var apiUrl = 'https://hotell.difi.no/api'
+const getResults = require('./lib/getResults')
+const validFormats = ['csv', 'json', 'jsonp', 'xml', 'yaml']
+const apiUrl = 'https://hotell.difi.no/api'
 var results = ''
 
 module.exports = function (opts, callback) {
@@ -23,7 +22,7 @@ module.exports = function (opts, callback) {
     return callback(new Error('Missing required param: query'), null)
   }
 
-  var uri = util.format('%s/%s/%s', apiUrl, opts.format, opts.dataset)
+  const uri = `${apiUrl}/${opts.format}/${opts.dataset}`
 
   getResults({apiUrl: uri, qs: opts.query}, function (error, data) {
     if (error) {
