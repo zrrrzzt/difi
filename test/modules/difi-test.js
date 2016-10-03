@@ -1,6 +1,6 @@
 'use strict'
 
-var difi = require('../index')
+var difi = require('../../index')
 var tap = require('tap')
 
 tap.test('Requires dataset to be specified', function (test) {

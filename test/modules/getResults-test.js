@@ -1,11 +1,11 @@
 'use strict'
 
-var tap = require('tap')
-var getResults = require('../lib/getResults')
+const tap = require('tap')
+const getResults = require('../../lib/getResults')
 
 tap.test('getResults should catch errors', function (test) {
   var options = {
-    apiUrl: 'https://yabendabenduhuusnippelapp.no',
+    apiUrl: 'http://yabendabenduhuusnippelapp.no',
     qs: {
       query: '994528130'
     }
