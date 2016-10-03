@@ -7,7 +7,6 @@ var apiUrl = 'http://hotell.difi.no/api'
 var results = ''
 
 module.exports = function (opts, callback) {
-
   if (!opts.dataset) {
     return callback(new Error('Missing required param: dataset'), null)
   }
@@ -33,5 +32,4 @@ module.exports = function (opts, callback) {
     results = opts.format === 'json' ? JSON.parse(data.toString()) : data.toString()
     return callback(null, results)
   })
-
 }
