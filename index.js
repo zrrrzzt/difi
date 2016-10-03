@@ -3,7 +3,7 @@
 var util = require('util')
 var getResults = require('./lib/getResults')
 var validFormats = ['csv', 'json', 'jsonp', 'xml', 'yaml']
-var apiUrl = 'http://hotell.difi.no/api'
+var apiUrl = 'https://hotell.difi.no/api'
 var results = ''
 
 module.exports = function (opts, callback) {
