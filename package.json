@@ -1,6 +1,6 @@
 {
   "name": "difi",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Query the hotell.difi.no API",
   "license": "MIT",
   "author": {
@@ -17,7 +17,7 @@
     "url": "http://github.com/zrrrzzt/difi/issues"
   },
   "engines": {
-    "node": ">=4.6.0"
+    "node": ">=4.6.1"
   },
   "scripts": {
     "setup": "npm install && node setup.js",
