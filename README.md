@@ -21,9 +21,11 @@ Pass an object with the required properties and receive the result.
 
 **query** Object with properties for querystring. Find all options in the [API description](http://hotell.difi.no/api)
 
-```javascript
-var difi = require('difi')
-var options = {
+### Promises
+
+```JavaScript
+const difi = require('difi')
+const options = {
       dataset:'brreg/enhetsregisteret',
       format: 'json',
       query: {
@@ -31,9 +33,30 @@ var options = {
       }
 }
 
-difi(options, function (err, data) {
-  if (err) {
-    throw err
+difi(options)
+  .then((data) => {
+    console.log(data)
+  })
+  .catch((error) => {
+    console.error(error)
+  })
+```
+
+### Callback
+
+```JavaScript
+const difi = require('difi')
+const options = {
+      dataset:'brreg/enhetsregisteret',
+      format: 'json',
+      query: {
+        query:'Pythonia'
+      }
+}
+
+difi(options, (error, data) => {
+  if (error) {
+    console.error(error)
   }
   console.log(data)
 })
