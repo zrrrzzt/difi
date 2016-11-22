@@ -41,18 +41,19 @@ module.exports = function (opts, callback) {
 
     const uri = `${apiUrl}/${opts.format}/${opts.dataset}`
 
-    getResults({apiUrl: uri, qs: opts.query}, function (error, data) {
+    getResults({apiUrl: uri, qs: opts.query}, (error, data) => {
       if (error) {
         if (callback) {
           return callback(error, null)
         }
         reject(error)
+      } else {
+        results = opts.format === 'json' ? JSON.parse(data.toString()) : data.toString()
+        if (callback) {
+          return callback(null, results)
+        }
+        resolve(results)
       }
-      results = opts.format === 'json' ? JSON.parse(data.toString()) : data.toString()
-      if (callback) {
-        return callback(null, results)
-      }
-      resolve(results)
     })
   })
 }
