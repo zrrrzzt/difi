@@ -17,7 +17,7 @@
     "url": "http://github.com/zrrrzzt/difi/issues"
   },
   "engines": {
-    "node": ">=4.6.2"
+    "node": ">=4.7.1"
   },
   "scripts": {
     "setup": "npm install && node setup.js",
