@@ -1,82 +1,103 @@
 'use strict'
 
-var difi = require('../../index')
-var tap = require('tap')
+const tap = require('tap')
+const difi = require('../../index')
 
-tap.test('Requires dataset to be specified', function (test) {
-  var options = {
+tap.test('Requires dataset to be specified', (test) => {
+  const options = {
     'format': 'json'
   }
-  var expectedErrorMessage = 'Missing required param: dataset'
-  difi(options, function (error, data) {
-    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-    test.done()
-  })
+  const expectedErrorMessage = 'Missing required param: dataset'
+  difi(options)
+    .then((data) => {
+      console.log(data)
+    })
+    .catch((error) => {
+      tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+      test.done()
+    })
 })
 
-tap.test('Requires format to be specified', function (test) {
-  var options = {
+tap.test('Requires format to be specified', (test) => {
+  const options = {
     'dataset': 'brreg/enhetsregisteret'
   }
-  var expectedErrorMessage = 'Missing required param: format'
-  difi(options, function (error, data) {
-    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-    test.done()
-  })
+  const expectedErrorMessage = 'Missing required param: format'
+  difi(options)
+    .then((data) => {
+      console.log(data)
+    })
+    .catch((error) => {
+      tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+      test.done()
+    })
 })
 
-tap.test('Requires valid format type', function (test) {
-  var options = {
+tap.test('Requires valid format type', (test) => {
+  const options = {
     'dataset': 'brreg/enhetsregisteret',
     'format': 'cucumber'
   }
-  var expectedErrorMessage = 'Illegal format requested'
-  difi(options, function (error, data) {
-    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-    test.done()
-  })
+  const expectedErrorMessage = 'Illegal format requested'
+  difi(options)
+    .then((data) => {
+      console.log(data)
+    })
+    .catch((error) => {
+      tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+      test.done()
+    })
 })
 
-tap.test('Requires query object', function (test) {
-  var options = {
+tap.test('Requires query object', (test) => {
+  const options = {
     'dataset': 'brreg/enhetsregisteret',
     'format': 'json'
   }
-  var expectedErrorMessage = 'Missing required param: query'
-  difi(options, function (error, data) {
-    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-    test.done()
-  })
+  const expectedErrorMessage = 'Missing required param: query'
+  difi(options)
+    .then((data) => {
+      console.log(data)
+    })
+    .catch((error) => {
+      tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+      test.done()
+    })
 })
 
-tap.test('Returns error message if dataset not found', function (test) {
-  var options = {
+tap.test('Returns error message if dataset not found', (test) => {
+  const options = {
     'dataset': 'npmlovesyou',
     'format': 'json',
     'query': {
       query: 'doyoulovenpm'
     }
   }
-  var expectedErrorMessage = 'Dataset or folder not found.'
-  difi(options, function (error, data) {
-    tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-    test.done()
-  })
+  const expectedErrorMessage = 'Dataset or folder not found.'
+  difi(options)
+    .then((data) => {
+      console.log(data)
+    })
+    .catch((error) => {
+      tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+      test.done()
+    })
 })
 
-tap.test('Returns json if format is json', function (test) {
-  var options = {
+tap.test('Returns json if format is json', (test) => {
+  const options = {
     dataset: 'brreg/enhetsregisteret',
     format: 'json',
     query: {
       query: '994528130'
     }
   }
-  difi(options, function (error, data) {
-    if (error) {
+  difi(options)
+    .then((data) => {
+      tap.equal(data.entries[0].orgnr, '994528130', 'Expected data returned from json')
+      test.done()
+    })
+    .catch((error) => {
       throw error
-    }
-    tap.equal(data.entries[0].orgnr, '994528130', 'Expected data returned from json')
-    test.done()
-  })
+    })
 })

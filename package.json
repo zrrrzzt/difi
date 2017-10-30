@@ -1,6 +1,6 @@
 {
   "name": "difi",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "description": "Query the hotell.difi.no API",
   "license": "MIT",
   "author": {
@@ -11,25 +11,28 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/zrrrzzt/difi.git"
+    "url": "git+https://github.com/zrrrzzt/difi.git"
   },
   "bugs": {
-    "url": "http://github.com/zrrrzzt/difi/issues"
+    "url": "https://github.com/zrrrzzt/difi/issues"
   },
+  "homepage": "https://github.com/zrrrzzt/difi",
   "engines": {
-    "node": ">=4.7.1"
+    "node": ">=8.8.1"
   },
   "scripts": {
-    "setup": "npm install && node setup.js",
     "test": "standard && nsp check && tap --reporter=spec test/**/*.js",
     "coverage": "tap test/**/*.js --coverage",
     "coveralls": "tap --cov --coverage-report=lcov test/**/*.js && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix"
   },
   "devDependencies": {
-    "coveralls": "2.13.1",
+    "coveralls": "3.0.0",
     "nsp": "2.8.1",
     "standard": "10.0.3",
     "tap": "10.7.2"
+  },
+  "dependencies": {
+    "axios": "^0.17.0"
   }
 }

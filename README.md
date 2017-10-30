@@ -1,9 +1,13 @@
 [![Build Status](https://travis-ci.org/zrrrzzt/difi.svg?branch=master)](https://travis-ci.org/zrrrzzt/difi)
 [![Coverage Status](https://coveralls.io/repos/zrrrzzt/difi/badge.svg?branch=master&service=github)](https://coveralls.io/github/zrrrzzt/difi?branch=master)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+[![Greenkeeper badge](https://badges.greenkeeper.io/zrrrzzt/difi.svg)](https://greenkeeper.io/)
+
 # difi
 
 Node.js module for querying the [hotell.difi.no API](http://hotell.difi.no/api).
+
+Requires Node >= 8
 
 ## Installation
 
@@ -15,53 +19,75 @@ $ npm install difi --save
 
 Pass an object with the required properties and receive the result.
 
-**dataset** The [dataset](http://hotell.difi.no/) you want to query.
+**dataset** The [dataset](https://hotell.difi.no/) you want to query.
 
 **format** Format for the result. Can be csv, json, jsonp, xml or yaml
 
-**query** Object with properties for querystring. Find all options in the [API description](http://hotell.difi.no/api)
-
-### Promises
+**query** Object with properties for querystring. Find all options in the [API description](https://hotell.difi.no/api)
 
 ```JavaScript
 const difi = require('difi')
 const options = {
-      dataset:'brreg/enhetsregisteret',
+      dataset: 'brreg/enhetsregisteret',
       format: 'json',
       query: {
-        query:'Pythonia'
+        query: 'Registerenheten i Brønnøysund'
       }
 }
 
 difi(options)
-  .then((data) => {
-    console.log(data)
-  })
-  .catch((error) => {
-    console.error(error)
-  })
+  .then(console.log)
+  .catch(console.error)
 ```
 
-### Callback
+Returns
 
 ```JavaScript
-const difi = require('difi')
-const options = {
-      dataset:'brreg/enhetsregisteret',
-      format: 'json',
-      query: {
-        query:'Pythonia'
-      }
-}
-
-difi(options, (error, data) => {
-  if (error) {
-    console.error(error)
-  }
-  console.log(data)
-})
+{ entries: 
+   [ { tvangsavvikling: 'N',
+       regnskap: '',
+       forradrpostnr: '8900',
+       ansatte_antall: '566',
+       postadresse: 'Postboks 900',
+       nkode3: '',
+       ppoststed: 'BRØNNØYSUND',
+       konkurs: 'N',
+       stiftelsesdato: '',
+       sektorkode: '6100',
+       ansatte_dato: '12.10.2017',
+       organisasjonsform: 'ORGL',
+       navn: 'REGISTERENHETEN I BRØNNØYSUND',
+       regifriv: 'N',
+       forradrkommnr: '1813',
+       regimva: 'N',
+       tlf_mobil: '',
+       forradrland: 'Norge',
+       ppostland: 'Norge',
+       avvikling: 'N',
+       regifr: 'N',
+       hovedenhet: '912660680',
+       forretningsadr: 'Havnegata 48',
+       url: 'www.brreg.no',
+       forradrpoststed: 'BRØNNØYSUND',
+       tlf: '75 00 75 09',
+       nkode1: '84.110',
+       nkode2: '',
+       forradrkommnavn: 'BRØNNØY',
+       regdato: '09.08.1995',
+       orgnr: '974760673',
+       regiaa: 'J',
+       ppostnr: '8910' } ],
+  page: 1,
+  pages: 1,
+  posts: 1 }
 ```
 
 ## Related
 
 - [difi-cli](https://github.com/zrrrzzt/difi-cli) CLI for this module
+
+## License
+
+[MIT](LICENSE)
+
+![Robohash image of difi](https://robots.kebabstudios.party/difi.png "Robohash image of difi")
