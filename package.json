@@ -16,15 +16,16 @@
   "bugs": {
     "url": "https://github.com/zrrrzzt/difi/issues"
   },
-  "homepage": "https://github.com/zrrrzzt/difi",
+  "homepage": "https://github.com/zrrrzzt/difi#readme",
   "engines": {
-    "node": ">=8.8.1"
+    "node": ">=8.9.4"
   },
   "scripts": {
     "test": "standard && nsp check && tap --reporter=spec test/**/*.js",
     "coverage": "tap test/**/*.js --coverage",
     "coveralls": "tap --cov --coverage-report=lcov test/**/*.js && cat coverage/lcov.info | coveralls",
-    "standard-fix": "standard --fix"
+    "standard-fix": "standard --fix",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "devDependencies": {
     "coveralls": "3.0.0",
@@ -33,6 +34,6 @@
     "tap": "11.0.1"
   },
   "dependencies": {
-    "axios": "^0.17.0"
+    "axios": "0.17.1"
   }
 }
