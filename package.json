@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/zrrrzzt/difi#readme",
   "engines": {
-    "node": ">=8.9.4"
+    "node": ">=8.15.0"
   },
   "scripts": {
     "test": "standard && nsp check && tap --reporter=spec test/**/*.js",
