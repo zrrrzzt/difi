@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/zrrrzzt/difi.svg?branch=master)](https://travis-ci.org/zrrrzzt/difi)
 [![Coverage Status](https://coveralls.io/repos/zrrrzzt/difi/badge.svg?branch=master&service=github)](https://coveralls.io/github/zrrrzzt/difi?branch=master)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-[![Greenkeeper badge](https://badges.greenkeeper.io/zrrrzzt/difi.svg)](https://greenkeeper.io/)
 
 # difi
 
@@ -89,5 +88,3 @@ Returns
 ## License
 
 [MIT](LICENSE)
-
-![Robohash image of difi](https://robots.kebabstudios.party/difi.png "Robohash image of difi")
