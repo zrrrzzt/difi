@@ -26,7 +26,7 @@ module.exports = function (opts, callback) {
     const uri = `${apiUrl}/${opts.format}/${opts.dataset}`
 
     try {
-      const data = await getResults({apiUrl: uri, qs: opts.query})
+      const data = await getResults({ apiUrl: uri, qs: opts.query })
       // results = opts.format === 'json' ? JSON.parse(data.toString()) : data.toString()
       resolve(data)
     } catch (error) {
