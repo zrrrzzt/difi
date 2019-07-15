@@ -21,8 +21,8 @@ tap.test('getResults should catch errors', async test => {
 
 tap.test('Returns error message if dataset not found', async test => {
   const options = {
-    'apiUrl': 'https://hotell.difi.no/api/json/npmlovesyou',
-    'qs': {
+    apiUrl: 'https://hotell.difi.no/api/json/npmlovesyou',
+    qs: {
       query: 'doyoulovenpm'
     }
   }

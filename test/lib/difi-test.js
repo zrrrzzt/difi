@@ -5,7 +5,7 @@ const difi = require('../../index')
 
 tap.test('Requires dataset to be specified', (test) => {
   const options = {
-    'format': 'json'
+    format: 'json'
   }
   const expectedErrorMessage = 'Missing required param: dataset'
   difi(options)
@@ -20,7 +20,7 @@ tap.test('Requires dataset to be specified', (test) => {
 
 tap.test('Requires format to be specified', (test) => {
   const options = {
-    'dataset': 'brreg/enhetsregisteret'
+    dataset: 'brreg/enhetsregisteret'
   }
   const expectedErrorMessage = 'Missing required param: format'
   difi(options)
@@ -35,8 +35,8 @@ tap.test('Requires format to be specified', (test) => {
 
 tap.test('Requires valid format type', (test) => {
   const options = {
-    'dataset': 'brreg/enhetsregisteret',
-    'format': 'cucumber'
+    dataset: 'brreg/enhetsregisteret',
+    format: 'cucumber'
   }
   const expectedErrorMessage = 'Illegal format requested'
   difi(options)
@@ -51,8 +51,8 @@ tap.test('Requires valid format type', (test) => {
 
 tap.test('Requires query object', (test) => {
   const options = {
-    'dataset': 'brreg/enhetsregisteret',
-    'format': 'json'
+    dataset: 'brreg/enhetsregisteret',
+    format: 'json'
   }
   const expectedErrorMessage = 'Missing required param: query'
   difi(options)
@@ -67,9 +67,9 @@ tap.test('Requires query object', (test) => {
 
 tap.test('Returns error message if dataset not found', (test) => {
   const options = {
-    'dataset': 'npmlovesyou',
-    'format': 'json',
-    'query': {
+    dataset: 'npmlovesyou',
+    format: 'json',
+    query: {
       query: 'doyoulovenpm'
     }
   }
