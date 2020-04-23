@@ -28,7 +28,7 @@
     "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "devDependencies": {
-    "coveralls": "3.0.13",
+    "coveralls": "3.0.14",
     "standard": "14.3.3",
     "tap": "14.10.7"
   },
