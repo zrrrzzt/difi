@@ -6,7 +6,7 @@
 
 Node.js module for querying the [hotell.difi.no API](http://hotell.difi.no/api).
 
-Requires Node >= 8
+Requires Node >= 14
 
 ## Installation
 
