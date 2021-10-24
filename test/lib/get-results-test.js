@@ -15,7 +15,7 @@ tap.test('getResults should catch errors', async test => {
     .then(console.log)
     .catch(error => {
       tap.ok(error, 'Error exists')
-      test.done()
+      test.end()
     })
 })
 
@@ -32,6 +32,6 @@ tap.test('Returns error message if dataset not found', async test => {
     .then(console.log)
     .catch(error => {
       tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-      test.done()
+      test.end()
     })
 })

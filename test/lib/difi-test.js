@@ -14,7 +14,7 @@ tap.test('Requires dataset to be specified', (test) => {
     })
     .catch((error) => {
       tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-      test.done()
+      test.end()
     })
 })
 
@@ -29,7 +29,7 @@ tap.test('Requires format to be specified', (test) => {
     })
     .catch((error) => {
       tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-      test.done()
+      test.end()
     })
 })
 
@@ -45,7 +45,7 @@ tap.test('Requires valid format type', (test) => {
     })
     .catch((error) => {
       tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-      test.done()
+      test.end()
     })
 })
 
@@ -61,7 +61,7 @@ tap.test('Requires query object', (test) => {
     })
     .catch((error) => {
       tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-      test.done()
+      test.end()
     })
 })
 
@@ -80,7 +80,7 @@ tap.test('Returns error message if dataset not found', (test) => {
     })
     .catch((error) => {
       tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
-      test.done()
+      test.end()
     })
 })
 
@@ -95,7 +95,7 @@ tap.test('Returns json if format is json', (test) => {
   difi(options)
     .then((data) => {
       tap.equal(data.entries[0].orgnr, '994528130', 'Expected data returned from json')
-      test.done()
+      test.end()
     })
     .catch((error) => {
       throw error
