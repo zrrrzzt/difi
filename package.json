@@ -33,7 +33,7 @@
     "tap": "16.1.0"
   },
   "dependencies": {
-    "axios": "0.26.0"
+    "axios": "0.27.2"
   },
   "tap": {
     "check-coverage": false
